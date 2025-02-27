@@ -556,7 +556,7 @@ footer p {
 }
 
 /* 🔹 Table of Contents (Aligned with Article) */
-/* 🔹 Two-Column Layout */
+/* 🔹 Two-Column Layout (Article & Sticky Newsletter) */
 .article-layout {
     display: flex;
     align-items: flex-start;
@@ -566,6 +566,59 @@ footer p {
     padding: 2rem;
 }
 
+/* 🔹 Left Column (Article Content) */
+.article-main {
+    flex: 1;
+    max-width: 750px;
+    padding-right: 2rem; /* Creates spacing from newsletter */
+}
+
+/* 🔹 Right Column (Sticky Newsletter) */
+.sticky-newsletter {
+    position: sticky;
+    top: 80px; /* Ensures it stays in view */
+    width: 300px;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    height: fit-content;
+}
+
+/* 🔹 Sticky Newsletter Heading */
+.sticky-newsletter h3 {
+    font-size: 1.6rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* 🔹 Sticky Newsletter Input */
+.sticky-newsletter input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+/* 🔹 Sticky Newsletter Button */
+.sticky-newsletter button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #0D6EFD;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.sticky-newsletter button:hover {
+    background: #084cdf;
+}
 
 
 /* 🔹 Table of Contents (Perfectly Aligned with Article) */

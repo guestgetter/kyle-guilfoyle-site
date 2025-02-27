@@ -537,53 +537,74 @@ footer p {
     overflow-x: hidden;
 }
 
-/* 🔹 Table of Contents */
-/* 🔹 Two-Column Layout (Aligning TOC & Article) */
-.article-layout {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
 
-/* 🔹 Left Column (Article + TOC) */
-.article-main {
-    flex: 1;
-    max-width: 750px;
-    padding-right: 2rem; /* Gives TOC some space from article */
-}
+
 
 /* 🔹 Table of Contents (Aligned with Article) */
-/* 🔹 Two-Column Layout (Article & Sticky Newsletter) */
+/* 🌟 General Layout Fix */
 .article-layout {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1100px; /* Ensures proper spacing */
     margin: 0 auto;
     padding: 2rem;
+    gap: 2rem; /* Adds spacing between columns */
 }
 
-/* 🔹 Left Column (Article Content) */
+/* 🔹 Left Column (Article Content & TOC) */
 .article-main {
     flex: 1;
-    max-width: 750px;
-    padding-right: 2rem; /* Creates spacing from newsletter */
+    max-width: 700px;
 }
 
-/* 🔹 Right Column (Sticky Newsletter) */
-.sticky-newsletter {
-    position: sticky;
-    top: 80px; /* Ensures it stays in view */
-    width: 300px;
-    background: #ffffff;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+/* 🔹 Hero Section Fix */
+.article-hero {
     text-align: center;
-    height: fit-content;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.article-hero img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+
+/* 🔹 TOC Heading */
+.table-of-contents h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #111;
+}
+
+/* 🔹 TOC List Styling */
+.table-of-contents ul {
+    padding-left: 1.5rem; /* Gives some left spacing */
+    margin-bottom: 0;
+}
+
+.table-of-contents li {
+    margin-bottom: 0.5rem;
+}
+
+/* 🔹 TOC Links */
+.table-of-contents a {
+    text-decoration: none;
+    color: #0D6EFD;
+    font-weight: 600;
+}
+
+.table-of-contents a:hover {
+    text-decoration: underline;
+    color: #084cdf;
 }
 
 /* 🔹 Sticky Newsletter Heading */
@@ -621,7 +642,7 @@ footer p {
 }
 
 
-/* 🔹 Table of Contents (Perfectly Aligned with Article) */
+/* 🔹 Table of Contents (Aligned with Article) */
 .table-of-contents {
     background: rgba(248, 249, 250, 0.8);
     padding: 1rem 1.5rem;
@@ -630,8 +651,12 @@ footer p {
     font-size: 1.1rem;
     max-width: 100%;
     margin-bottom: 2rem;
-    margin-left: 0; /* Ensures TOC aligns left */
-    padding-left: 1.5rem; /* Prevents text from touching edge */
+    
+    /* ✅ Ensure TOC aligns with article content */
+    width: 100%;
+    max-width: 700px;  /* Matches article width */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* 🔹 TOC Heading */
@@ -664,16 +689,19 @@ footer p {
     color: #084cdf;
 }
 
-/* 🔹 Sticky Newsletter (Right Column) */
+
+/* 🔹 Sticky Newsletter Fix */
 .sticky-newsletter {
     position: sticky;
-    top: 80px;
-    width: 300px;
+    top: 100px;
+    width: 280px;
     background: #ffffff;
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
     text-align: center;
+    height: fit-content;
+    flex-shrink: 0; /* Prevents it from pushing content */
 }
 
 /* 🔹 Article Content */

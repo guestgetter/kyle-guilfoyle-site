@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle Guilfoyle | Growth Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+<script defer src="script.js"></script>
+</head>
+<body class="home-page">
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">KYLE GUILFOYLE</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Articles</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section (FULL) -->
+    <section class="hero">
+        <canvas id="synapseCanvas"></canvas> <!-- Animation -->
+
+        <div class="hero-text">
+            <h1>I Help Restaurants Engineer Sustainable Growth—Not Chase Trends</h1>
+            <p>
+                Most restaurant growth efforts are random—social media, discounts, gut-feel marketing.  
+                I take a <strong>systems-first approach</strong>, helping restaurant owners build a  
+                <strong>repeatable, measurable growth engine</strong> based on <strong>proven 80/20 leverage points.</strong>  
+            </p>
+            <a class="cta-btn" href="#newsletter">See the System</a>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/kyle-hero.png" alt="Kyle Guilfoyle standing in front of a restaurant">
+        </div>
+    </section>
+
+    <!-- Featured Topics -->
+    <section class="topics-section" id="featured-topics">
+        <h2>Featured Topics</h2>
+        <div class="topic-grid">
+            <div class="topic-card">
+                <img src="images/pie-icon.png" alt="Pie Chart Icon">
+                <h3>Building the 80/20 Restaurant Growth OS</h3>
+                <p>My framework for identifying the small marketing levers that drive the biggest wins.</p>
+            </div>
+            <div class="topic-card">
+                <img src="images/tablet-icon.png" alt="Tablet Navigation Icon">
+                <h3>Defining Your “True Regular” Math</h3>
+                <p>Discover how to calculate the real lifetime value of your guests, and why focusing on “true regulars” can 10x your restaurant’s stability.</p>
+            </div>
+            <div class="topic-card">
+                <img src="images/restaurant-alchemist-manifesto.png" alt="Working at Laptop Icon">
+                <h3>The Restaurant Alchemist Manifesto</h3>
+                <p>A crash course on system-driven tactics that help your restaurant outsmart the competition.</p>
+            </div>
+            <div class="topic-card">
+                <img src="images/restaurant-growth-hacking.png" alt="Target & Steps Icon">
+                <h3>What is Restaurant Growth Hacking, Anyway?</h3>
+                <p>How to cultivate a culture of continuous growth and build a restaurant “movement.”</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter (NOW INCLUDED) -->
+    <section class="newsletter-section" id="newsletter">
+        <h2>Join My Newsletter</h2>
+        <p>Get fresh insights on restaurant growth and brand-building—straight to your inbox.</p>
+        <form action="#" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© <span id="year"></span> Kyle Guilfoyle. Let’s connect: <a href="mailto:kyle@mydomain.com">kyle@mydomain.com</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

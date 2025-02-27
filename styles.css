@@ -1,0 +1,794 @@
+/* 🌟 General Styles */
+/* Import Editorial Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem; /* Bigger text for readability */
+    background-color: #ffffff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8; /* More breathing room */
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #111; /* Deep black for contrast */
+}
+
+h1 {
+    font-size: 3rem; /* Bigger & bolder */
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin-top: 2.5rem;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.25rem; /* Bigger body copy */
+    color: #333;
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+}
+
+/* 🔹 Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 🔹 Global Logo Styling */
+.logo a {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #0D6EFD;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo a:hover {
+    color: #084cdf;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0D6EFD;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #084cdf;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    min-height: 80vh;
+    overflow: hidden;
+}
+
+/* Hero Text */
+.hero-text {
+    max-width: 600px;
+    z-index: 2;
+}
+
+/* Headline Styling (More Readable & Impactful) */
+.hero h1 {
+    font-size: 2.3rem; /* Slightly reduced for balance */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #191919;
+    line-height: 1.3;
+}
+
+/* Supporting Text */
+.hero p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    max-width: 550px;
+}
+
+/* CTA Button */
+.cta-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #0D6EFD;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+    background-color: #084cdf;
+    transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+/* Hero Image */
+.hero-image img {
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Synapse Animation */
+#synapseCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Featured Topics Section */
+.topics-section {
+    background: #f5faff;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.topics-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Topic Grid */
+.topic-grid {
+    display: grid;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Topic Cards */
+.topic-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease, filter 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+/* Ensure topic icons stay proportional and don’t grow too large */
+.topic-card img {
+    width: 80px;  /* Adjust size as needed (original was 80px) */
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;  /* Ensures the full image fits */
+    margin-bottom: 1rem;
+}
+
+/* Default subtle border */
+.topic-card::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Enhanced Hover Effect */
+.topic-card:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.3);
+    border-color: rgba(13, 110, 253, 0.6);
+}
+
+/* Flickering glow effect */
+.topic-card:hover::before {
+    border-color: rgba(13, 110, 253, 0.8);
+    animation: flicker 0.8s infinite alternate;
+}
+
+/* Dim non-hovered cards */
+.topic-grid:hover .topic-card {
+    filter: brightness(0.8);
+    transition: filter 0.3s ease;
+}
+
+.topic-grid:hover .topic-card:hover {
+    filter: brightness(1);
+}
+
+/* Flickering Animation */
+@keyframes flicker {
+    0% { border-color: rgba(13, 110, 253, 0.5); }
+    50% { border-color: rgba(13, 110, 253, 0.9); }
+    100% { border-color: rgba(13, 110, 253, 0.5); }
+}
+
+/* Newsletter Section */
+/* 🔹 Two-Column Layout */
+.article-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 🔹 Left Column: Article Content */
+.article-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+/* 🔹 Right Column: Sticky Newsletter */
+.sticky-newsletter {
+    position: sticky;
+    top: 100px; /* Adjust as needed */
+    width: 300px;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* 🔹 Sticky Newsletter Heading */
+.sticky-newsletter h3 {
+    font-size: 1.6rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* 🔹 Sticky Newsletter Input */
+.sticky-newsletter input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+/* 🔹 Sticky Newsletter Button */
+.sticky-newsletter button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #0D6EFD;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.sticky-newsletter button:hover {
+    background: #084cdf;
+}
+
+.newsletter-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-section p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.newsletter-section input {
+    padding: 0.75rem;
+    width: 250px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+}
+
+.newsletter-section button {
+    background-color: #0D6EFD;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.newsletter-section button:hover {
+    background-color: #084cdf;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #f5f5f5;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        text-align: center;
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-section input {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+
+
+
+/* Article Hero */
+.article-hero {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem; /* More spacing */
+}
+
+.article-hero {
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+    padding: 4rem 2rem;
+    border-radius: 8px;
+}
+
+.article-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #111; /* Darker for better contrast */
+}
+
+.article-hero .author {
+    font-size: 1.1rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.article-content {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #222; /* Darker text for better readability */
+}
+
+.article-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0D6EFD;
+}
+
+.article-hero img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.article-meta {
+    margin-top: 1rem;
+}
+
+.article-meta h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.author {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+
+/* Article Content */
+.article-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Pull Quote */
+.pull-quote {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(13, 110, 253, 0.1);
+    border-left: 5px solid #0D6EFD;
+    color: #0D6EFD;
+    font-style: italic;
+}
+
+/* Suggested Articles */
+.suggested-articles {
+    background: #f9f9f9;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.suggested-articles h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.article-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.article-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    color: #191919;
+    width: 250px;
+}
+
+.article-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.article-card h3 {
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌟 General Styles (Scoped to Article Page Only) */
+.article-page {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #191919;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* 🔹 Table of Contents */
+/* 🔹 Two-Column Layout (Aligning TOC & Article) */
+.article-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 🔹 Left Column (Article + TOC) */
+.article-main {
+    flex: 1;
+    max-width: 750px;
+    padding-right: 2rem; /* Gives TOC some space from article */
+}
+
+/* 🔹 Table of Contents (Aligned with Article) */
+/* 🔹 Two-Column Layout */
+.article-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+
+
+/* 🔹 Table of Contents (Perfectly Aligned with Article) */
+.table-of-contents {
+    background: rgba(248, 249, 250, 0.8);
+    padding: 1rem 1.5rem;
+    border-left: 5px solid #0D6EFD;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    margin-left: 0; /* Ensures TOC aligns left */
+    padding-left: 1.5rem; /* Prevents text from touching edge */
+}
+
+/* 🔹 TOC Heading */
+.table-of-contents h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #111;
+}
+
+/* 🔹 TOC List Styling */
+.table-of-contents ul {
+    padding-left: 1rem;
+    margin-bottom: 0;
+}
+
+.table-of-contents li {
+    margin-bottom: 0.5rem;
+}
+
+/* 🔹 TOC Links */
+.table-of-contents a {
+    text-decoration: none;
+    color: #0D6EFD;
+    font-weight: 600;
+}
+
+.table-of-contents a:hover {
+    text-decoration: underline;
+    color: #084cdf;
+}
+
+/* 🔹 Sticky Newsletter (Right Column) */
+.sticky-newsletter {
+    position: sticky;
+    top: 80px;
+    width: 300px;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* 🔹 Article Content */
+.article-page .article-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* 🔹 Pull Quote */
+.article-page .pull-quote {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(13, 110, 253, 0.1);
+    border-left: 5px solid #0D6EFD;
+    color: #0D6EFD;
+    font-style: italic;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 🔹 Suggested Articles */
+.article-page .suggested-articles {
+    background: #f9f9f9;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.article-page .suggested-articles h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.article-page .article-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 🔹 Suggested Article Cards */
+.article-page .article-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    color: #191919;
+    width: 250px;
+}
+
+.article-page .article-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.article-page .article-card h3 {
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.article-page .article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Footer */
+.article-page footer {
+    text-align: center;
+    padding: 2rem;
+    background: #f5f5f5;
+}
+
+.article-page footer p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .article-page .article-content {
+        padding: 1.5rem;
+    }
+
+    .article-page .pull-quote {
+        font-size: 1.2rem;
+    }
+
+    .article-page .table-of-contents {
+        padding: 1.5rem;
+    }
+
+    .article-page .article-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article-page .article-card {
+        width: 100%;
+    }
+}
+
+.newsletter-section {
+    background: #f9f9f9;
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 700px;
+    margin: 4rem auto;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.newsletter-section h3 {
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.newsletter-section p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-section input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.newsletter-section button {
+    width: 100%;
+    padding: 1rem;
+    background: #0D6EFD;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-section button:hover {
+    background: #084cdf;
+}
+
+.callout-box {
+    background: rgba(255, 244, 204, 0.8);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    max-width: 650px;
+    margin: 1.5rem auto 1rem; /* Reduce space above */
+    border-left: 4px solid #f4c542;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
